@@ -1,25 +1,16 @@
-name: test Project
-on: push #trigger when the repo is pushed 
-  jobs:
-    test: #name of the job
+name: Test Project
+on: push  # Trigger when code is pushed
+jobs:
+  test:   # Job name
     runs-on: ubuntu-latest
     steps:
       - name: Download the code to the repo
-        uses: actions/checkout@v6  # Action --> checkout to download the code, @v6 is version 
+        uses: actions/checkout@v4
       - name: Install Node JS
-        uses: actions/setup-node@v6
-        with: 
-          node-version: 24  # Node JS version
-      - name: Installing dependencies 
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Installing dependencies
         run: npm ci
       - name: Testing
-        run: npm test  # Shell command
-
-
-
-
-
-      
-
-
-
+        run: npm test
