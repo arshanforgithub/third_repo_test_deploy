@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Get-code
-        uses: action/checkout@v6
+        uses: action/checkout@v4
       - name: download NodeJS
         uses: action/setup-node@v4
         with:
